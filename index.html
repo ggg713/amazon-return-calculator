@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1641236408865438"
+     crossorigin="anonymous"></script>
+    <!-- Primary Meta Tags -->
+<title>Amazon FBA Return Calculator | True Profit After Returns</title>
+<meta name="description" content="Free tool for Amazon sellers: Calculate your REAL profit after return costs, fees, and lost inventory. No more hidden losses.">
+<meta name="keywords" content="Amazon FBA return calculator, FBA profit after returns, Amazon seller tools, return rate calculator">
+
+<!-- Open Graph / Social -->
+<meta property="og:title" content="Amazon FBA Return Calculator | Know Your True Costs">
+<meta property="og:description" content="Discover how much returns REALLY cost your Amazon business. Free calculator for sellers.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://yoursite.com/preview-image.jpg"> <!-- Upload later -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amazon FBA Return Calculator">
+<meta name="twitter:description" content="Calculate your hidden profit losses from Amazon returns in 30 seconds.">
+<!-- ▼ Paste Google Analytics here (START) ▼ -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXX-Y');
+  </script>
+  <!-- ▲ Paste Google Analytics here (END) ▲ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon FBA Return Profit Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+        /* Left Sidebar */
+        .sidebar {
+            width: 280px;
+            background: #f8f9fa;
+            padding: 25px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            color: #FF9900;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .sidebar p, .sidebar ul {
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        .sidebar ul {
+            padding-left: 20px;
+        }
+        /* Main Calculator */
+        .main-content {
+            flex: 1;
+            padding: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #FF9900;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+        .calculator {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .info-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: #FF9900;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 11px;
+            line-height: 16px;
+            margin-left: 5px;
+            cursor: help;
+            vertical-align: middle;
+        }
+        .tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            width: 220px;
+            bottom: 100%;
+            left: 0;
+            margin-bottom: 10px;
+            display: none;
+            z-index: 100;
+            font-weight: normal;
+        }
+        .info-icon:hover + .tooltip {
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 0.9em;
+        }
+        button {
+            background: #FF9900;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #e88a00;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 4px solid #FF9900;
+            display: none;
+        }
+        .result-item {
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+        .highlight {
+            color: #FF9900;
+            font-weight: bold;
+        }
+        .insight {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f7ff;
+            border-radius: 4px;
+            border-left: 4px solid #4285f4;
+            font-size: 0.85em;
+        }
+        .advanced-toggle {
+            color: #FF9900;
+            cursor: pointer;
+            user-select: none;
+            margin: 20px 0 15px;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 0.9em;
+        }
+        .advanced-fields {
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Left Sidebar - Compact with Expandable FAQs -->
+<div class="sidebar">
+    <div style="margin-bottom: 20px;">
+      <h2 style="font-size: 0.95em; margin-bottom: 10px;">Why This Matters</h2>
+      <p style="font-size: 0.75em; line-height: 1.4;">
+        Returns silently eat 10-30% of Amazon profits. This tool reveals:
+      </p>
+      <ul style="font-size: 0.75em; padding-left: 18px; line-height: 1.4;">
+        <li>Hidden fee structures</li>
+        <li>True net profit after returns</li>
+        <li>Marketplace cost differences</li>
+      </ul>
+    </div>
+  
+    <div style="margin-bottom: 20px;">
+      <h2 style="font-size: 0.95em; margin-bottom: 10px;">How To Use</h2>
+      <ol style="font-size: 0.75em; padding-left: 18px; line-height: 1.4;">
+        <li>Enter basic product numbers</li>
+        <li>Add advanced costs (optional)</li>
+        <li>Get instant profit analysis</li>
+      </ol>
+    </div>
+  
+    <!-- Expandable FAQ Section -->
+    <div>
+      <h2 style="font-size: 0.95em; margin-bottom: 10px; cursor: pointer;" 
+          onclick="toggleFAQ()">
+        <span id="faq-arrow">▼</span> Common Questions
+      </h2>
+      <div id="faq-content" style="display: none; font-size: 0.75em; line-height: 1.4;">
+        <p><strong>Where's my return rate?</strong><br>
+        Seller Central → Reports → Fulfillment → Returns</p>
+        
+        <p><strong>Good return rate by category:</strong><br>
+        • Electronics: 5-10%<br>
+        • Apparel: 15-30%<br>
+        • Home Goods: 8-12%</p>
+        
+        <p><strong>Fee refunds?</strong><br>
+        Amazon keeps referral fees (5-15%) on all returns</p>
+        
+        <p><strong>Reduce returns:</strong><br>
+        • 360° product videos<br>
+        • Sizing quiz widgets<br>
+        • "Compare to similar" images</p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function toggleFAQ() {
+      const content = document.getElementById("faq-content");
+      const arrow = document.getElementById("faq-arrow");
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        arrow.textContent = "▼";
+      } else {
+        content.style.display = "block";
+        arrow.textContent = "▲";
+      }
+    }
+  </script>
+
+    <!-- Main Calculator -->
+    <div class="main-content">
+        <h1>Amazon FBA Return Calculator</h1>
+        <p class="subtitle">Discover your true profit after all return costs</p>
+        
+        <div class="calculator">
+            <div class="input-group">
+                <label for="price">
+                    Product Price ($)
+                    <span class="info-icon">i</span>
+                    <span class="tooltip">
+                        The <strong>selling price</strong> on Amazon (before any fees). 
+                        Example: If you sell for $49.99, enter 49.99.
+                    </span>
+                </label>
+                <input type="number" id="price" placeholder="e.g., 49.99" step="0.01" min="0" value="49.99">
+            </div>
+            
+            <div class="input-group">
+                <label for="fees">
+                    Amazon Fees ($)
+                    <span class="info-icon">i</span>
+                    <span class="tooltip">
+                        Total Amazon fees <strong>per item</strong> (referral + FBA). 
+                        Find in Seller Central under "Revenue Calculator".
+                    </span>
+                </label>
+                <input type="number" id="fees" placeholder="e.g., 14.25" step="0.01" min="0" value="14.25">
+            </div>
+            
+            <div class="input-group">
+                <label for="return-rate">
+                    Return Rate (%)
+                    <span class="info-icon">i</span>
+                    <span class="tooltip">
+                        Percentage of orders returned. Find in: 
+                        <strong>Reports > Fulfillment > Returns</strong>.
+                        Apparel: 15-30%, Electronics: 5-15%.
+                    </span>
+                </label>
+                <input type="number" id="return-rate" placeholder="e.g., 15" step="0.1" min="0" max="100" value="15">
+            </div>
+            
+            <div class="input-group">
+                <label for="cogs">
+                    Cost of Goods ($)
+                    <span class="info-icon">i</span>
+                    <span class="tooltip">
+                        What you pay <strong>per unit</strong> (manufacturing + shipping to Amazon). 
+                        Exclude Amazon fees here.
+                    </span>
+                </label>
+                <input type="number" id="cogs" placeholder="e.g., 12.50" step="0.01" min="0" value="12.50">
+            </div>
+            
+            <div class="input-group">
+                <label for="units-sold">
+                    Units Sold/Month
+                    <span class="info-icon">i</span>
+                    <span class="tooltip">
+                        Average monthly sales volume. Critical for calculating 
+                        <strong>total monthly loss</strong> from returns.
+                    </span>
+                </label>
+                <input type="number" id="units-sold" placeholder="e.g., 100" min="1" value="100">
+            </div>
+            
+            <div class="advanced-toggle" onclick="toggleAdvanced()">▼ Advanced Return Costs</div>
+            
+            <div class="advanced-fields" id="advanced-fields">
+                <div class="input-group">
+                    <label for="restocking-fee">
+                        Restocking Fee ($)
+                        <span class="info-icon">i</span>
+                        <span class="tooltip">
+                            If you charge customers for returns (Amazon keeps 20%). 
+                            Most sellers charge 0-20% of item price.
+                        </span>
+                    </label>
+                    <input type="number" id="restocking-fee" placeholder="e.g., 5.00" step="0.01" min="0" value="5.00">
+                </div>
+                
+                <div class="input-group">
+                    <label for="return-shipping">
+                        Return Shipping ($)
+                        <span class="info-icon">i</span>
+                        <span class="tooltip">
+                            What you pay when Amazon ships returns back. 
+                            For "destroyed" items, enter $0.
+                        </span>
+                    </label>
+                    <input type="number" id="return-shipping" placeholder="e.g., 3.50" step="0.01" min="0" value="3.50">
+                </div>
+                
+                <div class="input-group">
+                    <label for="marketplace">
+                        Marketplace
+                        <span class="info-icon">i</span>
+                        <span class="tooltip">
+                            Europe has higher return costs (+20%), Japan has stricter policies (-5% costs). 
+                            USA is standard.
+                        </span>
+                    </label>
+                    <select id="marketplace">
+                        <option value="us">USA (Standard)</option>
+                        <option value="eu">Europe (+20% costs)</option>
+                        <option value="jp">Japan (-5% costs)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button onclick="calculate()">Calculate My True Profit</button>
+            
+            <div id="results">
+                <div class="result-item">
+                    Gross Profit (No Returns): <span id="gross-profit" class="highlight">$0.00</span>
+                </div>
+                
+                <div class="result-item">
+                    Net Profit After Returns: <span id="net-profit" class="highlight">$0.00</span>
+                </div>
+                
+                <div class="result-item">
+                    Lost to Returns: <span id="total-loss" class="highlight">$0.00</span> (<span id="loss-per-item">$0.00</span> per item)
+                </div>
+                
+                <div class="result-item">
+                    Monthly Impact: <span id="monthly-impact" class="highlight">$0.00</span>
+                </div>
+                
+                <div class="insight" id="insight">
+                    Enter your numbers to see personalized recommendations.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAdvanced() {
+            const advancedFields = document.getElementById("advanced-fields");
+            const toggle = document.querySelector(".advanced-toggle");
+            if (advancedFields.style.display === "block") {
+                advancedFields.style.display = "none";
+                toggle.innerHTML = "▼ Advanced Return Costs";
+            } else {
+                advancedFields.style.display = "block";
+                toggle.innerHTML = "▲ Advanced Return Costs";
+            }
+        }
+
+        function calculate() {
+            // Get inputs
+            const price = parseFloat(document.getElementById("price").value) || 0;
+            const fees = parseFloat(document.getElementById("fees").value) || 0;
+            const returnRate = (parseFloat(document.getElementById("return-rate").value) || 0) / 100;
+            const cogs = parseFloat(document.getElementById("cogs").value) || 0;
+            const unitsSold = parseInt(document.getElementById("units-sold").value) || 0;
+            const restockingFee = parseFloat(document.getElementById("restocking-fee").value) || 0;
+            const returnShipping = parseFloat(document.getElementById("return-shipping").value) || 0;
+            const marketplace = document.getElementById("marketplace").value;
+            
+            // Validate
+            if (price <= 0 || unitsSold <= 0) {
+                alert("Please enter valid product price and units sold");
+                return;
+            }
+            
+            // Marketplace adjustments
+            let marketplaceMultiplier = 1;
+            if (marketplace === "eu") marketplaceMultiplier = 1.2;
+            if (marketplace === "jp") marketplaceMultiplier = 0.95;
+            
+            // Calculations
+            const grossProfitPerUnit = price - fees - cogs;
+            const returnsCount = unitsSold * returnRate;
+            const costPerReturn = (restockingFee + returnShipping) * marketplaceMultiplier;
+            const totalReturnCosts = returnsCount * costPerReturn;
+            const netProfit = (grossProfitPerUnit * unitsSold) - totalReturnCosts;
+            const lossPerItem = grossProfitPerUnit - (netProfit / unitsSold);
+            
+            // Display
+            document.getElementById("gross-profit").textContent = `$${(grossProfitPerUnit * unitsSold).toFixed(2)}`;
+            document.getElementById("net-profit").textContent = `$${netProfit.toFixed(2)}`;
+            document.getElementById("total-loss").textContent = `$${(lossPerItem * unitsSold).toFixed(2)}`;
+            document.getElementById("loss-per-item").textContent = `$${lossPerItem.toFixed(2)}`;
+            document.getElementById("monthly-impact").textContent = `$${(lossPerItem * unitsSold).toFixed(2)}`;
+            
+            // Insights
+            const insightElement = document.getElementById("insight");
+            let insight = "";
+            
+            if (returnRate > 0.3) {
+                insight = "🚨 <strong>Critical:</strong> Return rate >30%. Improve product quality/sizing immediately.";
+            } else if (returnRate > 0.15) {
+                insight = "⚠️ <strong>Warning:</strong> Return rate above average. Enhance packaging/descriptions.";
+            } else {
+                insight = "💡 <strong>Good:</strong> Healthy return rate. Optimize further with A/B testing.";
+            }
+            
+            if (costPerReturn > (price * 0.2)) {
+                insight += "<br><br>📦 <strong>High Costs:</strong> Negotiate better return shipping rates.";
+            }
+            
+            insightElement.innerHTML = insight;
+            document.getElementById("results").style.display = "block";
+        }
+
+    </script>
+    
+    <!-- ▼ Paste RIGHT BEFORE </body> ▼ -->
+<footer style="
+text-align: center;
+padding: 15px 0;
+margin-top: 50px;
+background: #f8f9fa;
+border-top: 1px solid #ddd;
+font-size: 0.75em;
+position: fixed;
+bottom: 0;
+width: 100%;
+left: 0;
+">
+<a href="privacy.html" style="color: #FF9900; text-decoration: none;">Privacy Policy</a>
+  <a href="/about.html">About</a> | 
+  <a href="/privacy.html">Privacy</a> | 
+  <a href="/terms.html">Terms</a> | 
+  <a href="/contact.html">Contact</a>
+</footer>
+</body>
+
+</html>
