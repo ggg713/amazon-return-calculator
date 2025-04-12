@@ -1,0 +1,20 @@
+<!-- sitemap.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://amazonreturncalculator.netlify.app/</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://amazonreturncalculator.netlify.app/about.html</loc>
+    <lastmod>2025-04-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amazonreturncalculator.netlify.app/privacy.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <!-- Add other pages (terms.html, contact.html, etc.) -->
+</urlset>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amazonreturncalculator.netlify.app/sitemap.xml
